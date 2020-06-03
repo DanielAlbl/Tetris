@@ -94,16 +94,6 @@ void KeyboardEvent::doAction(Game &game)
         game.rotateShapeClock();
     if(key == 'a')
         game.rotateShapeCounter();
-    if(key == ',')
-    {
-        game.setKeyHitTime();
-        game.left = true;
-    }
-    if(key == '.')
-    {
-        game.setKeyHitTime();
-        game.right = true;
-    }
     if(key == ' ')
         game.speedUp();       
     if(key == 'p')
@@ -123,12 +113,48 @@ void KeyboardUpEvent::doAction(Game &game)
 {
     if(key == ' ')
         game.slowDown();
-    if(key == ',')
-        game.left = false;
-    if(key == '.')
-        game.right = false;
 }
  
+/***************************************************************************//**
+ * @brief Constructor
+ *
+ * @param[in] k - the ascii value of the key that was pressed
+ * @param[in] x - the x-coordinate of where the key 'k' was pressed
+ * @param[in] y - the y-coordinate of where the key 'k' was pressed
+ ******************************************************************************/
+SpecialEvent::SpecialEvent(int k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
+
+void SpecialEvent::doAction(Game &game)
+{
+	if(key == GLUT_KEY_LEFT)
+    {
+        game.setKeyHitTime();
+        game.left = true;
+    }
+    if(key == GLUT_KEY_RIGHT)
+    {
+        game.setKeyHitTime();
+        game.right = true;
+    }
+}
+	
+/***************************************************************************//**
+ * @brief Constructor
+ *
+ * @param[in] k - the ascii value of the key that was pressed
+ * @param[in] x - the x-coordinate of where the key 'k' was pressed
+ * @param[in] y - the y-coordinate of where the key 'k' was pressed
+ ******************************************************************************/
+SpecialUpEvent::SpecialUpEvent(int k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
+
+void SpecialUpEvent::doAction(Game &game)
+{
+ 	if(key == GLUT_KEY_LEFT)
+        game.left = false;
+    if(key == GLUT_KEY_RIGHT)
+        game.right = false;
+}
+
 /***************************************************************************//**
  * @brief Constructor
  *

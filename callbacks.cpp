@@ -42,6 +42,30 @@ void keyboardUp(unsigned char key, int x, int y)
 }
 
 /***************************************************************************//**
+ * @brief A callback function for handling special keys
+ *
+ * @param[in] key - the key that was pressed
+ * @param[in] x   - the x-coordinate when the key was pressed
+ * @param[in] y   - the y-coordinate when the key was pressed
+ ******************************************************************************/
+void special(int key, int x, int y)
+{
+    utilityCentral(new SpecialEvent(key, x, actualY(y)));
+}
+
+/***************************************************************************//**
+ * @brief A callback function for handling special up keys
+ *
+ * @param[in] key - the key that was pressed
+ * @param[in] x   - the x-coordinate when the key was pressed
+ * @param[in] y   - the y-coordinate when the key was pressed
+ ******************************************************************************/
+void specialUp(int key, int x, int y)
+{
+    utilityCentral(new SpecialUpEvent(key, x, actualY(y)));
+}
+
+/***************************************************************************//**
  * @brief A callback function for handling mouse click events
  *
  * @param[in] button - the mouse button pushed

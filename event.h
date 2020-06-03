@@ -75,6 +75,43 @@ public:
    void doAction(Game &);
 };
 
+/***************************************************************************//**
+ * @class
+ ******************************************************************************/
+class SpecialEvent : public Event
+{
+   /// The key involved in this event
+   int key;
+   /// The x-location of where the event took place
+   int xLoc;
+   /// The y-location of where the event took place
+   int yLoc;
+
+public:
+   /// Constructor
+   SpecialEvent(int, int, int);
+
+   void doAction(Game &);
+};
+
+/***************************************************************************//**
+ * @class
+ ******************************************************************************/
+class SpecialUpEvent : public Event
+{
+   /// The key involved in this event
+   int key;
+   /// The x-location of where the event took place
+   int xLoc;
+   /// The y-location of where the event took place
+   int yLoc;
+
+public:
+   /// Constructor
+   SpecialUpEvent(int, int, int);
+
+   void doAction(Game &);
+};
 
 /***************************************************************************//**
  * @class

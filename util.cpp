@@ -36,6 +36,10 @@ void initOpenGL(int argc, char** argv, int wCols, int wRows)
 
    glutKeyboardUpFunc(keyboardUp);
 
+   glutSpecialFunc(special);
+
+   glutSpecialUpFunc(specialUp);
+
    glutMouseFunc(mouseClick);
 
    glutReshapeFunc(reshape);

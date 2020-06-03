@@ -16,6 +16,10 @@ void display();
 void keyboard(unsigned char key, int x, int y);
 /// Callback for the keyboard up event
 void keyboardUp(unsigned char key, int x, int y);
+/// Callback for special keys
+void special(int key, int x, int y);
+/// Callback for special up keys
+void specialUp(int key, int x, int y);
 /// Callback for the mouseClick event
 void mouseClick(int button, int state, int x, int y);
 /// Callback for the mouseDrag event
