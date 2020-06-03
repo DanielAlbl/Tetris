@@ -10,16 +10,14 @@ Event::~Event() {}
  ******************************************************************************/
 InitEvent::InitEvent(int c, int r) : columns(c), rows(r) {}
 
-void InitEvent::doAction(Game &game)
-{
-   glClear(GL_COLOR_BUFFER_BIT);
-   game.initGameState();
-   glutSwapBuffers();
+void InitEvent::doAction(Game &game) {
+    glClear(GL_COLOR_BUFFER_BIT);
+    game.initGameState();
+    glutSwapBuffers();
 }
 
-void DisplayEvent::doAction(Game &game)
-{
-   glutSwapBuffers();
+void DisplayEvent::doAction(Game &game) {
+    glutSwapBuffers();
 }
 
 /***************************************************************************//**
@@ -30,8 +28,7 @@ void DisplayEvent::doAction(Game &game)
  ******************************************************************************/
 ReshapeEvent::ReshapeEvent(int w, int h) : width(w), height(h) {}
 
-void ReshapeEvent::doAction(Game &game)
-{
+void ReshapeEvent::doAction(Game &game) {
 }
 
 /***************************************************************************//**
@@ -42,8 +39,8 @@ void ReshapeEvent::doAction(Game &game)
  * @param[in] x - the x-coordinate of where the button 'b' was pressed/released
  * @param[in] y - the y-coordinate of where the button 'b' was pressed/released
  ******************************************************************************/
-MouseClickEvent::MouseClickEvent(int b, int s, int x, int y) : 
-   button(b), state(s), xLoc(x), yLoc(y) {}
+MouseClickEvent::MouseClickEvent(int b, int s, int x, int y) :
+    button(b), state(s), xLoc(x), yLoc(y) {}
 
 void MouseClickEvent::doAction(Game &game)
 { }
@@ -66,12 +63,11 @@ void MouseDragEvent::doAction(Game &game) { }
  ******************************************************************************/
 MouseMoveEvent::MouseMoveEvent(int x, int y) : xLoc(x), yLoc(y) {}
 
-void MouseMoveEvent::doAction(Game &game)
-{
-   stringstream ss;
+void MouseMoveEvent::doAction(Game &game) {
+    stringstream ss;
 
-   ss << "x = " << xLoc << " :: y = " << yLoc;
-   glutSetWindowTitle(ss.str().c_str());
+    ss << "x = " << xLoc << " :: y = " << yLoc;
+    glutSetWindowTitle(ss.str().c_str());
 }
 
 /***************************************************************************//**
@@ -83,19 +79,15 @@ void MouseMoveEvent::doAction(Game &game)
  ******************************************************************************/
 KeyboardEvent::KeyboardEvent(unsigned char k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
-void KeyboardEvent::doAction(Game &game)
-{
-    if(key == ESCAPE_KEY)
-    {
-       game.closeDown();
-       glutLeaveMainLoop();
+void KeyboardEvent::doAction(Game &game) {
+    if(key == ESCAPE_KEY) {
+        game.closeDown();
+        glutLeaveMainLoop();
     }
     if(key == 'd')
         game.rotateShapeClock();
     if(key == 'a')
         game.rotateShapeCounter();
-    if(key == ' ')
-        game.speedUp();       
     if(key == 'p')
         game.paused ^= 1;
 }
@@ -109,12 +101,9 @@ void KeyboardEvent::doAction(Game &game)
  ******************************************************************************/
 KeyboardUpEvent::KeyboardUpEvent(unsigned char k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
-void KeyboardUpEvent::doAction(Game &game)
-{
-    if(key == ' ')
-        game.slowDown();
+void KeyboardUpEvent::doAction(Game &game) {
 }
- 
+
 /***************************************************************************//**
  * @brief Constructor
  *
@@ -124,20 +113,19 @@ void KeyboardUpEvent::doAction(Game &game)
  ******************************************************************************/
 SpecialEvent::SpecialEvent(int k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
-void SpecialEvent::doAction(Game &game)
-{
-	if(key == GLUT_KEY_LEFT)
-    {
+void SpecialEvent::doAction(Game &game) {
+    if(key == GLUT_KEY_LEFT) {
         game.setKeyHitTime();
         game.left = true;
     }
-    if(key == GLUT_KEY_RIGHT)
-    {
+    if(key == GLUT_KEY_RIGHT) {
         game.setKeyHitTime();
         game.right = true;
     }
+    if(key == GLUT_KEY_DOWN)
+        game.speedUp();
 }
-	
+
 /***************************************************************************//**
  * @brief Constructor
  *
@@ -147,12 +135,13 @@ void SpecialEvent::doAction(Game &game)
  ******************************************************************************/
 SpecialUpEvent::SpecialUpEvent(int k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
-void SpecialUpEvent::doAction(Game &game)
-{
- 	if(key == GLUT_KEY_LEFT)
+void SpecialUpEvent::doAction(Game &game) {
+    if(key == GLUT_KEY_LEFT)
         game.left = false;
     if(key == GLUT_KEY_RIGHT)
         game.right = false;
+    if(key == GLUT_KEY_DOWN)
+        game.slowDown();
 }
 
 /***************************************************************************//**
@@ -163,9 +152,8 @@ void SpecialUpEvent::doAction(Game &game)
  ******************************************************************************/
 TimerEvent::TimerEvent(int value) : tick(value) {}
 
-void TimerEvent::doAction(Game &game)
-{
-   game.executeTurn();
+void TimerEvent::doAction(Game &game) {
+    game.executeTurn();
 }
 
 /***************************************************************************//**
@@ -173,7 +161,6 @@ void TimerEvent::doAction(Game &game)
  ******************************************************************************/
 CloseEvent::CloseEvent() {}
 
-void CloseEvent::doAction(Game &game)
-{
-   game.closeDown();
+void CloseEvent::doAction(Game &game) {
+    game.closeDown();
 }

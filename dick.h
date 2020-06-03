@@ -3,13 +3,12 @@
 
 #include "shape.h"
 
-class Dick : public Shape
-{
-public:
+class Dick : public Shape {
+  public:
     Dick(int, int);
-    void rotateClock(); 
+    void rotateClock();
     void rotateCounter();
-    
+
     void clock0();
     void clock1();
     void clock2();

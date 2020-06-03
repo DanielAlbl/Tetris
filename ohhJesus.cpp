@@ -1,19 +1,16 @@
 #include "ohhJesus.h"
 
-OhhJesus::OhhJesus(int x1, int y1) : Shape(x1,y1)
-{
+OhhJesus::OhhJesus(int x1, int y1) : Shape(x1,y1) {
     squares[1].up();
     squares[2].up();
     squares[2].up();
-    squares[3].up();    
-    squares[3].up();    
-    squares[3].up();   
+    squares[3].up();
+    squares[3].up();
+    squares[3].up();
 }
 
-void OhhJesus::rotateClock()
-{
-    if(orientation % 2 == 1)
-    {
+void OhhJesus::rotateClock() {
+    if(orientation % 2 == 1) {
         rotateCounter();
         return;
     }
@@ -30,10 +27,8 @@ void OhhJesus::rotateClock()
     orientation++;
 }
 
-void OhhJesus::rotateCounter()
-{
-    if(orientation % 2 == 0)
-    {
+void OhhJesus::rotateCounter() {
+    if(orientation % 2 == 0) {
         rotateClock();
         return;
     }

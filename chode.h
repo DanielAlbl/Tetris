@@ -3,13 +3,12 @@
 
 #include "shape.h"
 
-class Chode : public Shape
-{
-public:
+class Chode : public Shape {
+  public:
     Chode(int, int);
-    void rotateClock(); 
+    void rotateClock();
     void rotateCounter();
-    
+
     void clock0();
     void clock1();
     void clock2();

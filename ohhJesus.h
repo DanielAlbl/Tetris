@@ -3,11 +3,10 @@
 
 #include "shape.h"
 
-class OhhJesus : public Shape
-{
-public:
+class OhhJesus : public Shape {
+  public:
     OhhJesus(int, int);
-    void rotateClock(); 
+    void rotateClock();
     void rotateCounter();
 };
 

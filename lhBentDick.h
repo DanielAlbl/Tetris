@@ -3,13 +3,12 @@
 
 #include "shape.h"
 
-class LhBentDick : public Shape
-{
-public:
+class LhBentDick : public Shape {
+  public:
     LhBentDick(int, int);
-    void rotateClock(); 
+    void rotateClock();
     void rotateCounter();
-    
+
     void rotate0();
     void rotate1();
 };
