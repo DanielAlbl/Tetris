@@ -58,5 +58,5 @@ help:
 -include $(SOURCE:.cpp=.d)
 
 %.d: %.cpp
-	@set -e; /usr/bin/rm -rf $@;$(GCC) -MM $< $(CXXFLAGS) > $@
+	@set -e; rm -rf $@;$(GCC) -MM $< $(CXXFLAGS) > $@
 
