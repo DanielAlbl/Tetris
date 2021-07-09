@@ -6,7 +6,6 @@
 class Dick : public Shape {
   public:
     Dick(int, int);
-	void init();
     void rotateClock();
     void rotateCounter();
 

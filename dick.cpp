@@ -1,9 +1,7 @@
 #include "dick.h"
 
-Dick::Dick(int x1, int y1) : Shape(x1, y1) { init(); }
-
-void Dick::init() {
-	squares[1].up();
+Dick::Dick(int x1, int y1) : Shape(x1,y1) {
+    squares[1].up();
     squares[2].up();
     squares[2].up();
     squares[3].up();

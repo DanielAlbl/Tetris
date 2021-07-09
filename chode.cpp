@@ -1,9 +1,7 @@
 #include "chode.h"
 
-Chode::Chode(int x1, int y1) : Shape(x1, y1) { init(); }
-
-void Chode::init() {
-	squares[1].right();
+Chode::Chode(int x1, int y1) : Shape(x1,y1) {
+    squares[1].right();
     squares[2].right();
     squares[2].up();
     squares[3].right();

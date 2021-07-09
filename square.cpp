@@ -1,26 +1,17 @@
 #include "square.h"
 
-Square::Square(Square & s) {
-    x = s.X();
-    y = s.Y();
+Square::Square(Square& s) {
+    x = s.X(), y = s.Y();
     COLOR_ARRAY_INDEX = s.COLOR_ARRAY_INDEX;
 }
 
-void Square::up() {
-    y += SQUARE_WIDTH;
-}
+void Square::up()    { y += SQUARE_WIDTH; }
 
-void Square::down() {
-    y -= SQUARE_WIDTH;
-}
+void Square::down()  { y -= SQUARE_WIDTH; }
 
-void Square::right() {
-    x += SQUARE_WIDTH;
-}
+void Square::right() { x += SQUARE_WIDTH; }
 
-void Square::left() {
-    x -= SQUARE_WIDTH;
-}
+void Square::left()  { x -= SQUARE_WIDTH; }
 
 void Square::draw() {
     float white[3] = {1,1,1};
@@ -41,6 +32,3 @@ void Square::draw() {
     glVertex2f(x, y+SQUARE_WIDTH);
     glEnd();
 }
-
-
-

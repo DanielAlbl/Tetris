@@ -13,25 +13,26 @@ using namespace std;
 /// Callback for the display event
 void display();
 /// Callback for the keyboard event
-void keyboard(unsigned char key, int x, int y);
+void keyboard(unsigned char, int, int);
 /// Callback for the keyboard up event
-void keyboardUp(unsigned char key, int x, int y);
+void keyboardUp(unsigned char, int, int);
 /// Callback for special keys
-void special(int key, int x, int y);
+void special(int, int, int);
 /// Callback for special up keys
-void specialUp(int key, int x, int y);
+void specialUp(int, int, int);
 /// Callback for the mouseClick event
-void mouseClick(int button, int state, int x, int y);
+void mouseClick(int, int, int, int);
 /// Callback for the mouseDrag event
-void mouseDrag(int x, int y);
+void mouseDrag(int, int);
 /// Callback for the mouseMove event
-void mouseMove(int x, int y);
+void mouseMove(int, int);
 /// Callback for the reshape event
-void reshape(const int x, const int y);
+void reshape(const int, const int);
 /// Common function for collecting event information
 void utilityCentral(Event *);
 /// Function that's called on a timer
-void ticktock(int value);
+void ticktock(int);
 /// Called when openGL is closing
 void onClose();
+
 #endif

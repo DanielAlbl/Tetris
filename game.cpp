@@ -183,7 +183,6 @@ void Game::findFullLines() {
         }
     }
     score += count * count;
-    score1 += count * count;
     printScore();
 }
 
@@ -204,7 +203,7 @@ void Game::findFullSingleLine(int i) {
 
 void Game::deleteLines() {
     int count = 0;
-    for(int i = 0; i < 48; i++)
+    for(int i = 0; i+count < 48; i++)
         if(fullLine[i+count]) {
             fullLine[i+count] = false;
             for(int j = 0; j < 14; j++) {
@@ -223,8 +222,6 @@ void Game::deleteLines() {
             i--;
             count++;
         }
-    score = score1; // no idea y i have 2 do dis
-
 }
 
 void Game::rotateShapeClock() {

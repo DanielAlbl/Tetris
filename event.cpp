@@ -28,8 +28,7 @@ void DisplayEvent::doAction(Game &game) {
  ******************************************************************************/
 ReshapeEvent::ReshapeEvent(int w, int h) : width(w), height(h) {}
 
-void ReshapeEvent::doAction(Game &game) {
-}
+void ReshapeEvent::doAction(Game &game) {}
 
 /***************************************************************************//**
  * @brief Constructor
@@ -42,8 +41,7 @@ void ReshapeEvent::doAction(Game &game) {
 MouseClickEvent::MouseClickEvent(int b, int s, int x, int y) :
     button(b), state(s), xLoc(x), yLoc(y) {}
 
-void MouseClickEvent::doAction(Game &game)
-{ }
+void MouseClickEvent::doAction(Game &game) {}
 
 /***************************************************************************//**
  * @brief Constructor
@@ -53,7 +51,7 @@ void MouseClickEvent::doAction(Game &game)
  ******************************************************************************/
 MouseDragEvent::MouseDragEvent(int x, int y) : xLoc(x), yLoc(y) {}
 
-void MouseDragEvent::doAction(Game &game) { }
+void MouseDragEvent::doAction(Game &game) {}
 
 /***************************************************************************//**
  * @brief Constructor
@@ -101,8 +99,7 @@ void KeyboardEvent::doAction(Game &game) {
  ******************************************************************************/
 KeyboardUpEvent::KeyboardUpEvent(unsigned char k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
-void KeyboardUpEvent::doAction(Game &game) {
-}
+void KeyboardUpEvent::doAction(Game &game) {}
 
 /***************************************************************************//**
  * @brief Constructor
@@ -118,11 +115,11 @@ void SpecialEvent::doAction(Game &game) {
         game.setKeyHitTime();
         game.left = true;
     }
-    if(key == GLUT_KEY_RIGHT) {
+	else if(key == GLUT_KEY_RIGHT) {
         game.setKeyHitTime();
         game.right = true;
     }
-    if(key == GLUT_KEY_DOWN)
+    else if(key == GLUT_KEY_DOWN)
         game.speedUp();
 }
 
@@ -138,9 +135,9 @@ SpecialUpEvent::SpecialUpEvent(int k, int x, int y) : key(k), xLoc(x), yLoc(y) {
 void SpecialUpEvent::doAction(Game &game) {
     if(key == GLUT_KEY_LEFT)
         game.left = false;
-    if(key == GLUT_KEY_RIGHT)
+	else if(key == GLUT_KEY_RIGHT)
         game.right = false;
-    if(key == GLUT_KEY_DOWN)
+	else if(key == GLUT_KEY_DOWN)
         game.slowDown();
 }
 

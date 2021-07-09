@@ -49,5 +49,3 @@ void Shape::updateXY() {
             y = squares[i].Y();
     }
 }
-
-

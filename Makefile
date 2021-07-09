@@ -47,13 +47,13 @@ tar: clean
 	tar zcvf tetris.tgz $(SOURCE) *.h Makefile
 
 help:
-	@echo "	make main  - same as make all"
-	@echo "	make all   - builds the main target"
-	@echo "	make       - same as make all"
-	@echo "	make clean - remove .o .d core main"
-	@echo "	make debug - make all with -g and -DDEBUG"
-	@echo "	make tar   - make a tarball of .cpp and .h files"
-	@echo "	make help  - this message"
+	@echo "	make tetris - same as make all"
+	@echo "	make all    - builds the main target"
+	@echo "	make        - same as make all"
+	@echo "	make clean  - remove .o .d core main"
+	@echo "	make debug  - make all with -g and -DDEBUG"
+	@echo "	make tar    - make a tarball of .cpp and .h files"
+	@echo "	make help   - this message"
 
 -include $(SOURCE:.cpp=.d)
 

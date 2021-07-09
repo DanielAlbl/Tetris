@@ -1,8 +1,7 @@
 #ifndef __GAME_H
 #define __GAME_H
-#include <iostream>
+
 #include <sstream>
-#include "square.h"
 #include "twoXtwo.h"
 #include "ohhJesus.h"
 #include "chode.h"
@@ -17,9 +16,9 @@ class Game {
     int dropDelay = 100;
     bool fullLine[48];
     int score = 0;
-    int score1 = 0;
     int nextShapeType = 0;
     int changeShapeTime;
+
   public:
     Shape * currentShape;
     Shape * nextShape;
@@ -38,8 +37,8 @@ class Game {
 
     void drawBorder();
 
-    void speedUp() { dropDelay /= 4; }
-    void slowDown() {dropDelay *= 4; }
+    void speedUp()  { dropDelay/=4; }
+    void slowDown() { dropDelay*=4; }
 
     void changeShape();
     void changeNextShape();

@@ -3,8 +3,6 @@
 
 #include <GL/freeglut.h>
 #include <sstream>
-#include <string>
-#include "event.h"
 #include "callbacks.h"
 
 void initOpenGL(int, char**, int, int);

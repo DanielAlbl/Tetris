@@ -5,13 +5,11 @@
 
 class Shape {
   protected:
-    int x;
-    int y;
+    int x, y;
     unsigned int orientation;
 
   public:
-    Shape() {}
-	Shape(int,int);
+    Shape(int,int);
     virtual ~Shape() = 0;
 
     Square squares[4];
@@ -24,7 +22,6 @@ class Shape {
     int Y() { return y; }
     void setColor(int);
     void hitBottom(Square* pile[48][14]);
-	virtual void init() {}
     virtual void rotateClock() = 0;
     virtual void rotateCounter() = 0;
     void updateXY();

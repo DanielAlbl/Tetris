@@ -1,12 +1,13 @@
 #ifndef LHDICK
 #define LHDICK
 
-#include "dick.h"
+#include "shape.h"
 
-class LhDick : public Dick {
+class LhDick : public Shape {
   public:
     LhDick(int, int);
-	void init();
+    void rotateClock();
+    void rotateCounter();
 
     void clock0();
     void clock1();

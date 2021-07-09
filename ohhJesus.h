@@ -6,7 +6,6 @@
 class OhhJesus : public Shape {
   public:
     OhhJesus(int, int);
-	void init();
     void rotateClock();
     void rotateCounter();
 };
