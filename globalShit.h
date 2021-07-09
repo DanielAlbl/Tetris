@@ -9,7 +9,8 @@
 #define NEXT_Y 500
 #define RIGHT_WALL 400
 #define LEFT_WALL 200
-static const float COLOR_ARRAY[7][3] = { {1,0,0},
+static const float COLOR_ARRAY[7][3] = { 
+	{1,0,0},
     {0,1,0},
     {0,0,1},
     {1,0,1},

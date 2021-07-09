@@ -38,12 +38,8 @@ class Game {
 
     void drawBorder();
 
-    void speedUp() {
-        dropDelay/=4;
-    }
-    void slowDown() {
-        dropDelay*=4;
-    }
+    void speedUp() { dropDelay /= 4; }
+    void slowDown() {dropDelay *= 4; }
 
     void changeShape();
     void changeNextShape();

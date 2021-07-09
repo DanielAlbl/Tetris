@@ -1,7 +1,9 @@
 #include "chode.h"
 
-Chode::Chode(int x1, int y1) : Shape(x1,y1) {
-    squares[1].right();
+Chode::Chode(int x1, int y1) : Shape(x1, y1) { init(); }
+
+void Chode::init() {
+	squares[1].right();
     squares[2].right();
     squares[2].up();
     squares[3].right();
@@ -10,36 +12,20 @@ Chode::Chode(int x1, int y1) : Shape(x1,y1) {
 
 void Chode::rotateClock() {
     switch(orientation % 4) {
-    case 0:
-        clock0();
-        break;
-    case 1:
-        clock1();
-        break;
-    case 2:
-        clock2();
-        break;
-    case 3:
-        clock3();
-        break;
+		case 0: clock0(); break;
+		case 1: clock1(); break;
+		case 2: clock2(); break;
+		case 3: clock3(); break;
     }
     orientation++;
 }
 
 void Chode::rotateCounter() {
     switch(orientation % 4) {
-    case 0:
-        counter0();
-        break;
-    case 1:
-        counter1();
-        break;
-    case 2:
-        counter2();
-        break;
-    case 3:
-        counter3();
-        break;
+		case 0: counter0(); break;
+		case 1: counter1(); break;
+		case 2: counter2(); break;
+		case 3: counter3(); break;
     }
     orientation--;
 }

@@ -1,16 +1,12 @@
 #ifndef LH_BENT_DICK
 #define LH_BENT_DICK
 
-#include "shape.h"
+#include "bentDick.h"
 
-class LhBentDick : public Shape {
+class LhBentDick : public BentDick {
   public:
     LhBentDick(int, int);
-    void rotateClock();
-    void rotateCounter();
-
-    void rotate0();
-    void rotate1();
+	void init();
 };
 
 #endif

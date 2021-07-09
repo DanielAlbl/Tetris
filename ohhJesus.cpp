@@ -1,7 +1,9 @@
 #include "ohhJesus.h"
 
-OhhJesus::OhhJesus(int x1, int y1) : Shape(x1,y1) {
-    squares[1].up();
+OhhJesus::OhhJesus(int x1, int y1) : Shape(x1, y1) { init(); }
+
+void OhhJesus::init() {
+	squares[1].up();
     squares[2].up();
     squares[2].up();
     squares[3].up();

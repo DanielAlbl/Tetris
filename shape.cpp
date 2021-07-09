@@ -41,8 +41,7 @@ void Shape::setColor(int color) {
 }
 
 void Shape::updateXY() {
-    x = 640;
-    y = 800;
+    x = 640, y = 800;
     for(int i = 0; i < 4; i++) {
         if(squares[i].X() < x)
             x = squares[i].X();
@@ -50,3 +49,5 @@ void Shape::updateXY() {
             y = squares[i].Y();
     }
 }
+
+

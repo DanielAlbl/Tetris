@@ -6,6 +6,7 @@
 class BentDick : public Shape {
   public:
     BentDick(int, int);
+	void init();
     void rotateClock();
     void rotateCounter();
 

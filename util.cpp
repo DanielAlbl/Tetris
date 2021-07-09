@@ -6,13 +6,11 @@ void utilityCentral(Event *event) {
     delete event;
 }
 
-
-
 /***************************************************************************//**
  * Initialize glut callback functions, set the display mode, create a window
  ******************************************************************************/
 void initOpenGL(int argc, char** argv, int wCols, int wRows) {
-    char title[9] = "Score: 0";
+    char title[11] = "Score: 0";
 
     glutInit(&argc, argv);
 
@@ -22,7 +20,7 @@ void initOpenGL(int argc, char** argv, int wCols, int wRows) {
 
     glutInitWindowSize(wCols, wRows);
 
-    glutInitWindowPosition(100, 100);
+    glutInitWindowPosition(0, 0);
 
     glutCreateWindow(title);
 

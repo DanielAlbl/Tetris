@@ -10,4 +10,5 @@
 void initOpenGL(int, char**, int, int);
 void utilityCentral(Event *);
 string printScore(int);
+
 #endif

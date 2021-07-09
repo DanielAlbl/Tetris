@@ -6,6 +6,7 @@
 class Chode : public Shape {
   public:
     Chode(int, int);
+	void init();
     void rotateClock();
     void rotateCounter();
 
