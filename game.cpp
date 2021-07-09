@@ -7,6 +7,9 @@ Game::Game() {
         fullLine[i] = false;
     }
     srand(time(NULL));
+	
+	changeShape();
+	changeNextShape();
 }
 
 Game::~Game() {

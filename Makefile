@@ -1,8 +1,6 @@
 SOURCE = callbacks.cpp \
-         event.cpp \
          game.cpp \
          main.cpp \
-         util.cpp \
          shape.cpp \
          square.cpp \
          twoXtwo.cpp \
