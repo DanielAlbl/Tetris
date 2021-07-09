@@ -63,13 +63,12 @@ void Game::executeTurn() {
 		// speed up over time
         if(turn % 10000 == 0)
             dropDelay--;
-        if(((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50) or tuckableRight())
-            if(right and inBoundsRight())
-                currentShape->right();
-        if(((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50) or tuckableLeft())
-            if(left and inBoundsLeft())
-                currentShape->left();
-
+		// Move right or left
+		if((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50 and right and inBoundsRight())
+            currentShape->right();
+        if((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50 and left  and inBoundsLeft() )
+            currentShape->left();
+		
         if(turn % dropDelay == 0) {
             glClear(GL_COLOR_BUFFER_BIT);
             if(hitPile()) {
@@ -265,27 +264,4 @@ bool Game::inBoundsLeft() {
 void Game::setKeyHitTime() {
     keyHitTime = turn;
 }
-
-bool Game::tuckableRight() {
-    /*
-    for(int i = 0; i < 4; i++)
-        for(int j = 0; j < HEIGHT; j++)
-            for(int k = 0; k < WIDTH; k++)
-                if(pile[j][k] and pile[j][k]->X() == (currentShape->squares[i].X()+SQUARE_WIDTH) and pile[j][k]->Y()+SQUARE_WIDTH > currentShape->squares[i].X())
-                    return true;
-                    */
-    return false;
-}
-
-bool Game::tuckableLeft() {
-    /*
-    for(int i = 0; i < 4; i++)
-        for(int j = 0; j < HEIGHT; j++)
-            for(int k = 0; k < WIDTH; k++)
-                if(pile[j][k] and pile[j][k]->X() == (currentShape->squares[i].X()-SQUARE_WIDTH) and pile[j][k]->Y()+SQUARE_WIDTH > currentShape->squares[i].X())
-                    return true;
-    */
-    return false;
-}
-
 

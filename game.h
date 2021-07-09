@@ -58,9 +58,6 @@ class Game {
     bool inBoundsLeft();
 
     void setKeyHitTime();
-
-    bool tuckableRight();
-    bool tuckableLeft();
 };
 
 #endif

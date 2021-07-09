@@ -1,7 +1,7 @@
 #ifndef SQUARE
 #define SQUARE
 
-#include "globalShit.h"
+#include "global.h"
 
 class Square {
     int x, y;
