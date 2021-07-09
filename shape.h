@@ -21,7 +21,7 @@ class Shape {
     int X() { return x; }
     int Y() { return y; }
     void setColor(int);
-    void hitBottom(Square* pile[48][14]);
+    void hitBottom(Square*[HEIGHT][WIDTH]);
     virtual void rotateClock() = 0;
     virtual void rotateCounter() = 0;
     void updateXY();

@@ -14,7 +14,7 @@ class Game {
     int turn = 0;
     int keyHitTime;
     int dropDelay = 100;
-    bool fullLine[48];
+    bool fullLine[HEIGHT];
     int score = 0;
     int nextShapeType = 0;
     int changeShapeTime;
@@ -24,8 +24,9 @@ class Game {
     Shape * nextShape;
 
     Game();
+	~Game();
 
-    Square* pile[48][14];
+    Square* pile[HEIGHT][WIDTH];
     bool left = false;
     bool right = false;
     bool paused = false;

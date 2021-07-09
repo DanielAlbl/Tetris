@@ -30,7 +30,7 @@ void Shape::draw() {
         squares[i].draw();
 }
 
-void Shape::hitBottom(Square* pile[48][14]) {
+void Shape::hitBottom(Square* pile[HEIGHT][WIDTH]) {
     for(int i = 0; i < 4; i++)
         pile[squares[i].Y()/SQUARE_WIDTH][(squares[i].X()-LEFT_WALL)/SQUARE_WIDTH] = new Square(squares[i]);
 }
@@ -40,8 +40,9 @@ void Shape::setColor(int color) {
         squares[i].COLOR_ARRAY_INDEX = color;
 }
 
+// makes x and y the bottom left most square
 void Shape::updateXY() {
-    x = 640, y = 800;
+    x = RIGHT_WALL, y = START_Y;
     for(int i = 0; i < 4; i++) {
         if(squares[i].X() < x)
             x = squares[i].X();

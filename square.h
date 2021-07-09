@@ -6,10 +6,12 @@
 class Square {
     int x, y;
 
+	void setVertices();
+
   public:
-    Square(): x(320), y(800-SQUARE_WIDTH) {}
+    Square(): x(START_X), y(START_Y-SQUARE_WIDTH) {}
     Square(int x1, int y1): x(x1), y(y1) {}
-    Square(Square & s);
+    Square(Square& s);
 
     void setPoint(int x1, int y1) { x = x1, y = y1; }
 

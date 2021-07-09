@@ -78,15 +78,13 @@ void MouseMoveEvent::doAction(Game &game) {
 KeyboardEvent::KeyboardEvent(unsigned char k, int x, int y) : key(k), xLoc(x), yLoc(y) {}
 
 void KeyboardEvent::doAction(Game &game) {
-    if(key == ESCAPE_KEY) {
-        game.closeDown();
+    if(key == ESCAPE_KEY) 
         glutLeaveMainLoop();
-    }
-    if(key == 'd')
+	else if(key == 'd')
         game.rotateShapeClock();
-    if(key == 'a')
+	else if(key == 'a')
         game.rotateShapeCounter();
-    if(key == 'p')
+	else if(key == 'p')
         game.paused ^= 1;
 }
 
@@ -158,6 +156,4 @@ void TimerEvent::doAction(Game &game) {
  ******************************************************************************/
 CloseEvent::CloseEvent() {}
 
-void CloseEvent::doAction(Game &game) {
-    game.closeDown();
-}
+void CloseEvent::doAction(Game &game) {}
