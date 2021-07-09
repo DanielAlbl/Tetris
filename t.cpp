@@ -1,6 +1,6 @@
-#include "chode.h"
+#include "t.h"
 
-Chode::Chode(int x1, int y1) : Shape(x1,y1) {
+T::T(int x1, int y1) : Shape(x1,y1) {
     squares[1].right();
     squares[2].right();
     squares[2].up();
@@ -8,7 +8,7 @@ Chode::Chode(int x1, int y1) : Shape(x1,y1) {
     squares[3].right();
 }
 
-void Chode::rotateClock() {
+void T::rotateClock() {
     switch(orientation % 4) {
 		case 0: clock0(); break;
 		case 1: clock1(); break;
@@ -18,7 +18,7 @@ void Chode::rotateClock() {
     orientation++;
 }
 
-void Chode::rotateCounter() {
+void T::rotateCounter() {
     switch(orientation % 4) {
 		case 0: counter0(); break;
 		case 1: counter1(); break;
@@ -28,50 +28,50 @@ void Chode::rotateCounter() {
     orientation--;
 }
 
-void Chode::clock0() {
+void T::clock0() {
     squares[0].down();
     squares[0].right();
 }
 
-void Chode::clock1() {
+void T::clock1() {
     squares[0].up();
     squares[0].left();
     squares[2].down();
     squares[2].down();
 }
 
-void Chode::clock2() {
+void T::clock2() {
     squares[3].left();
     squares[3].up();
 }
 
-void Chode::clock3() {
+void T::clock3() {
     squares[3].right();
     squares[3].down();
     squares[2].up();
     squares[2].up();
 }
 
-void Chode::counter0() {
+void T::counter0() {
     squares[3].left();
     squares[3].up();
     squares[2].down();
     squares[2].down();
 }
 
-void Chode::counter1() {
+void T::counter1() {
     squares[0].up();
     squares[0].left();
 }
 
-void Chode::counter2() {
+void T::counter2() {
     squares[0].down();
     squares[0].right();
     squares[2].up();
     squares[2].up();
 }
 
-void Chode::counter3() {
+void T::counter3() {
     squares[3].right();
     squares[3].down();
 }

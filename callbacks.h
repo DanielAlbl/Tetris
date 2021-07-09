@@ -3,12 +3,12 @@
  ******************************************************************************/
 #ifndef CALLBACKS_H
 #define CALLBACKS_H
+
 #define ESCAPE_KEY 27
 
 #include "game.h"
 
 static Game game;
-using namespace std;
 
 void display();
 void keyboard(unsigned char, int, int);

@@ -1,6 +1,6 @@
-#include "lhBentDick.h"
+#include "z.h"
 
-LhBentDick::LhBentDick(int x1, int y1) : Shape(x1,y1) {
+Z::Z(int x1, int y1) : Shape(x1,y1) {
     squares[1].up();
     squares[2].up();
     squares[2].left();
@@ -9,7 +9,7 @@ LhBentDick::LhBentDick(int x1, int y1) : Shape(x1,y1) {
     squares[3].left();
 }
 
-void LhBentDick::rotateClock() {
+void Z::rotateClock() {
 	if(orientation)
 		rotate1();
 	else
@@ -18,16 +18,16 @@ void LhBentDick::rotateClock() {
     orientation = (orientation + 1) % 2;
 }
 
-void LhBentDick::rotateCounter() { rotateClock(); }
+void Z::rotateCounter() { rotateClock(); }
 
-void LhBentDick::rotate0() {
+void Z::rotate0() {
     squares[0].left();
     squares[0].left();
     squares[3].down();
     squares[3].down();
 }
 
-void LhBentDick::rotate1() {
+void Z::rotate1() {
     squares[0].right();
     squares[0].right();
     squares[3].up();

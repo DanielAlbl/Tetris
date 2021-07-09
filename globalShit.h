@@ -2,6 +2,8 @@
 #include <ctime>
 #include <GL/freeglut.h>
 
+using namespace std;
+
 const int SQUARE_WIDTH =  15;
 const int HEIGHT       =  48;
 const int WIDTH        =  14;

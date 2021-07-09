@@ -25,13 +25,13 @@ void Game::changeNextShape() {
     int randNum = rand() % 7;
     delete nextShape;
     switch(randNum) {
-		case 0: nextShape = new TwoXtwo(NEXT_X,NEXT_Y);    break;
-		case 1: nextShape = new OhhJesus(NEXT_X,NEXT_Y);   break;
-		case 2: nextShape = new Chode(NEXT_X,NEXT_Y);      break;
-		case 3: nextShape = new Dick(NEXT_X,NEXT_Y);       break;
-		case 4: nextShape = new LhDick(NEXT_X,NEXT_Y);     break;
-		case 5: nextShape = new BentDick(NEXT_X,NEXT_Y);   break;
-		case 6: nextShape = new LhBentDick(NEXT_X,NEXT_Y); break;
+		case 0: nextShape = new O(NEXT_X,NEXT_Y); break;
+		case 1: nextShape = new I(NEXT_X,NEXT_Y); break;
+		case 2: nextShape = new T(NEXT_X,NEXT_Y); break;
+		case 3: nextShape = new L(NEXT_X,NEXT_Y); break;
+		case 4: nextShape = new J(NEXT_X,NEXT_Y); break;
+		case 5: nextShape = new S(NEXT_X,NEXT_Y); break;
+		case 6: nextShape = new Z(NEXT_X,NEXT_Y); break;
     }
     nextShape->setColor(randNum);
     nextShapeType = randNum;
@@ -47,13 +47,13 @@ void Game::changeShape() {
     }
 
     switch(randNum) {
-		case 0: currentShape = new TwoXtwo(START_X,START_Y);    break;
-		case 1: currentShape = new OhhJesus(START_X,START_Y);   break;
-		case 2: currentShape = new Chode(START_X,START_Y);      break;
-		case 3: currentShape = new Dick(START_X,START_Y);       break;
-		case 4: currentShape = new LhDick(START_X,START_Y);     break;
-		case 5: currentShape = new BentDick(START_X,START_Y);   break;
-		case 6: currentShape = new LhBentDick(START_X,START_Y); break;
+		case 0: currentShape = new O(START_X,START_Y); break;
+		case 1: currentShape = new I(START_X,START_Y); break;
+		case 2: currentShape = new T(START_X,START_Y); break;
+		case 3: currentShape = new L(START_X,START_Y); break;
+		case 4: currentShape = new J(START_X,START_Y); break;
+		case 5: currentShape = new S(START_X,START_Y); break;
+		case 6: currentShape = new Z(START_X,START_Y); break;
     }
     currentShape->setColor(randNum);
 }
@@ -75,7 +75,7 @@ void Game::executeTurn() {
             if(hitPile()) {
                 updatePile();
                 if(hitTop()) {
-                    std::cout << "Final Score: " << score << '\n';
+                    cout << "Final Score: " << score << '\n';
                     glutLeaveMainLoop();
                 }
                 changeShape();
@@ -162,7 +162,7 @@ void Game::findFullLines() {
 }
 
 void Game::printScore() {
-    std::stringstream ss;
+    stringstream ss;
     ss << "Score: " << score;
     glutSetWindowTitle(ss.str().c_str());
 }

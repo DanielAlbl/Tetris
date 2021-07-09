@@ -3,9 +3,9 @@
 
 #include "shape.h"
 
-class OhhJesus : public Shape {
+class I : public Shape {
   public:
-    OhhJesus(int, int);
+    I(int, int);
     void rotateClock();
     void rotateCounter();
 };

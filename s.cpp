@@ -1,6 +1,6 @@
-#include "bentDick.h"
+#include "s.h"
 
-BentDick::BentDick(int x1, int y1) : Shape(x1,y1) {
+S::S(int x1, int y1) : Shape(x1,y1) {
     squares[1].up();
     squares[2].up();
     squares[2].right();
@@ -9,7 +9,7 @@ BentDick::BentDick(int x1, int y1) : Shape(x1,y1) {
     squares[3].right();
 }
 
-void BentDick::rotateClock() {
+void S::rotateClock() {
 	if(orientation)
 		rotate1();
 	else
@@ -18,16 +18,16 @@ void BentDick::rotateClock() {
     orientation = (orientation + 1) % 2;
 }
 
-void BentDick::rotateCounter() { rotateClock(); }
+void S::rotateCounter() { rotateClock(); }
 
-void BentDick::rotate0() {
+void S::rotate0() {
     squares[0].right();
     squares[0].right();
     squares[3].down();
     squares[3].down();
 }
 
-void BentDick::rotate1() {
+void S::rotate1() {
     squares[0].left();
     squares[0].left();
     squares[3].up();

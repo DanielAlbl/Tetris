@@ -1,6 +1,6 @@
-#include "lhDick.h"
+#include "j.h"
 
-LhDick::LhDick(int x1, int y1) : Shape(x1,y1) {
+J::J(int x1, int y1) : Shape(x1,y1) {
     squares[1].up();
     squares[2].up();
     squares[2].up();
@@ -9,7 +9,7 @@ LhDick::LhDick(int x1, int y1) : Shape(x1,y1) {
     squares[3].right();
 }
 
-void LhDick::rotateClock() {
+void J::rotateClock() {
     switch(orientation % 4) {
 		case 0: clock0(); break;
 		case 1: clock1(); break;
@@ -19,7 +19,7 @@ void LhDick::rotateClock() {
     orientation++;
 }
 
-void LhDick::rotateCounter() {
+void J::rotateCounter() {
     switch(orientation % 4) {
 		case 0: counter0(); break;
 		case 1: counter1(); break;
@@ -29,7 +29,7 @@ void LhDick::rotateCounter() {
     orientation--;
 }
 
-void LhDick::clock0() {
+void J::clock0() {
     squares[0].up();
     squares[0].left();
     squares[2].right();
@@ -38,7 +38,7 @@ void LhDick::clock0() {
     squares[3].down();
 }
 
-void LhDick::clock1() {
+void J::clock1() {
     squares[0].up();
     squares[0].right();
     squares[2].left();
@@ -47,7 +47,7 @@ void LhDick::clock1() {
     squares[3].left();
 }
 
-void LhDick::clock2() {
+void J::clock2() {
     squares[0].down();
     squares[0].right();
     squares[2].left();
@@ -56,7 +56,7 @@ void LhDick::clock2() {
     squares[3].up();
 }
 
-void LhDick::clock3() {
+void J::clock3() {
     squares[0].down();
     squares[0].left();
     squares[2].right();
@@ -65,7 +65,7 @@ void LhDick::clock3() {
     squares[3].right();
 }
 
-void LhDick::counter0() {
+void J::counter0() {
     squares[0].up();
     squares[0].right();
     squares[2].left();
@@ -75,7 +75,7 @@ void LhDick::counter0() {
 
 }
 
-void LhDick::counter1() {
+void J::counter1() {
     squares[0].down();
     squares[0].right();
     squares[2].left();
@@ -84,7 +84,7 @@ void LhDick::counter1() {
     squares[3].up();
 }
 
-void LhDick::counter2() {
+void J::counter2() {
     squares[0].down();
     squares[0].left();
     squares[2].right();
@@ -93,7 +93,7 @@ void LhDick::counter2() {
     squares[3].right();
 }
 
-void LhDick::counter3() {
+void J::counter3() {
     squares[0].up();
     squares[0].left();
     squares[2].right();

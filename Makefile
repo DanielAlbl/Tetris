@@ -3,13 +3,13 @@ SOURCE = callbacks.cpp \
          main.cpp \
          shape.cpp \
          square.cpp \
-         twoXtwo.cpp \
-         ohhJesus.cpp \
-         chode.cpp \
-         dick.cpp \
-         lhDick.cpp \
-         bentDick.cpp \
-         lhBentDick.cpp
+         o.cpp \
+         i.cpp \
+         t.cpp \
+         l.cpp \
+         j.cpp \
+         s.cpp \
+         z.cpp
 
 OBJS = $(SOURCE:.cpp=.o)
 

@@ -2,13 +2,13 @@
 #define __GAME_H
 
 #include <sstream>
-#include "twoXtwo.h"
-#include "ohhJesus.h"
-#include "chode.h"
-#include "dick.h"
-#include "lhDick.h"
-#include "bentDick.h"
-#include "lhBentDick.h"
+#include "o.h"
+#include "i.h"
+#include "t.h"
+#include "l.h"
+#include "j.h"
+#include "s.h"
+#include "z.h"
 
 class Game {
     int turn = 0;
