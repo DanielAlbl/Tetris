@@ -4,10 +4,10 @@
 using namespace std;
 
 const int SQUARE_WIDTH =  15;
-const int HEIGHT       =  48;
+const int HEIGHT       =  49;
 const int WIDTH        =  14;
 const int START_X      = 305;
-const int START_Y      = 800;
+const int START_Y      = 750;
 const int NEXT_X       = 500;
 const int NEXT_Y       = 500;
 const int RIGHT_WALL   = 400;

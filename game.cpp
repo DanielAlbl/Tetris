@@ -63,12 +63,16 @@ void Game::executeTurn() {
 		// speed up over time
         if(turn % 10000 == 0)
             dropDelay--;
-		// Move right or left
-		if((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50 and right and inBoundsRight())
-            currentShape->right();
-        if((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50 and left  and inBoundsLeft() )
-            currentShape->left();
+
+		// Move right or left, limit how often it fires
+		if((turn == keyHitTime or turn > keyHitTime + 100) and turn % 50 == keyHitTime % 50) {
+		   if(right and inBoundsRight())
+                currentShape->right();
+			else if(left and inBoundsLeft())
+                currentShape->left();
+		}
 		
+		// move shape down suqare every "dropDelay" moves
         if(turn % dropDelay == 0) {
             glClear(GL_COLOR_BUFFER_BIT);
             if(hitPile()) {
@@ -81,24 +85,12 @@ void Game::executeTurn() {
                 changeNextShape();
             }
 
-            drawBorder();
-            printPile();
-            currentShape->draw();
-			nextShape->draw();
-			printScore();
-
-            glutSwapBuffers();
-
+			draw();
+            
             currentShape->down();
         }
         turn++;
     }
-}
-
-void Game::initGameState() {
-    changeShape();
-    changeNextShape();
-    drawBorder();
 }
 
 void Game::drawBorder() {
@@ -106,11 +98,20 @@ void Game::drawBorder() {
     glLineWidth(2);
     glColor3fv(white);
     glBegin(GL_LINE_LOOP);
-    glVertex2f(LEFT_WALL-5, 0);
+    glVertex2f(LEFT_WALL-5, 10);
     glVertex2f(LEFT_WALL-5, START_Y);
     glVertex2f(RIGHT_WALL+SQUARE_WIDTH, START_Y);
-    glVertex2f(RIGHT_WALL+SQUARE_WIDTH, 0);
+    glVertex2f(RIGHT_WALL+SQUARE_WIDTH, 10);
     glEnd();
+}
+
+void Game::draw() {
+    drawBorder();
+    printPile();
+    currentShape->draw();
+	nextShape->draw();
+	printScore();
+    glutSwapBuffers();
 }
 
 void Game::updatePile() {
@@ -122,7 +123,7 @@ void Game::updatePile() {
 void Game::printPile() {
     for(int i = 0; i < HEIGHT; i++)
         for(int j = 0; j < WIDTH; j++)
-            if(pile[i][j] != nullptr)
+            if(pile[i][j])
                 pile[i][j]->draw();
 }
 
@@ -163,7 +164,7 @@ void Game::findFullLines() {
 void Game::printScore() {
     stringstream ss;
     ss << "Score: " << score;
-	glColor3f(1.0, 1.0, 1.0);
+    glColor3f(1.0, 1.0, 1.0);
 	glRasterPos2f(425, 25);
 	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (const unsigned char*)ss.str().c_str());
 }

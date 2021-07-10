@@ -37,6 +37,7 @@ class Game {
     bool hitTop();
 
     void drawBorder();
+	void draw();
 
     void speedUp()  { dropDelay /= 4; }
     void slowDown() { dropDelay *= 4; }
@@ -44,8 +45,6 @@ class Game {
     void changeShape();
     void changeNextShape();
     void executeTurn();
-    void initGameState();
-    void closeDown();
 
     void printScore();
     void findFullLines();
