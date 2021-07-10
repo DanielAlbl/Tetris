@@ -4,7 +4,7 @@
  * Initialize glut callback functions, set the display mode, create a window
  ******************************************************************************/
 void initOpenGL(int argc, char** argv, int wCols, int wRows) {
-    char title[11] = "Score: 0";
+    char title[7] = "Tetris";
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);

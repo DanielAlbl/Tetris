@@ -85,6 +85,7 @@ void Game::executeTurn() {
             printPile();
             currentShape->draw();
 			nextShape->draw();
+			printScore();
 
             glutSwapBuffers();
 
@@ -157,13 +158,14 @@ void Game::findFullLines() {
         }
     }
     score += count * count;
-    printScore();
 }
 
 void Game::printScore() {
     stringstream ss;
     ss << "Score: " << score;
-    glutSetWindowTitle(ss.str().c_str());
+	glColor3f(1.0, 1.0, 1.0);
+	glRasterPos2f(425, 25);
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (const unsigned char*)ss.str().c_str());
 }
 
 void Game::findFullSingleLine(int i) {
@@ -200,6 +202,12 @@ void Game::deleteLines() {
 void Game::rotateShapeClock() {
     currentShape->rotateClock();
     currentShape->updateXY();
+
+    if(!inBoundsLeft() and !inBoundsRight()) {
+		currentShape->rotateCounter();
+		return;
+	}
+
     bool loopedOnce = false;
     while(!inBoundsLeft()) {
         currentShape->right();
@@ -220,6 +228,12 @@ void Game::rotateShapeClock() {
 void Game::rotateShapeCounter() {
     currentShape->rotateCounter();
     currentShape->updateXY();
+
+    if(!inBoundsLeft() and !inBoundsRight()) {
+		currentShape->rotateClock();
+		return;
+	}
+
     bool loopedOnce = false;
     while(!inBoundsLeft()) {
         currentShape->right();

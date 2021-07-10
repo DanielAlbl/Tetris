@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ctime>
 #include <GL/freeglut.h>
 
 using namespace std;
